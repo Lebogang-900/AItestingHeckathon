@@ -1,6 +1,15 @@
 Install dependencies:
 
+for testing app
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 pip install transformers sentencepiece accelerate
 pip install playwright
 playwright install
+
+for test system:
+dotnet new blazorserver -n AcademicSystem
+cd AcademicSystem
+dotnet add package MudBlazor
+dotnet add package Csla
+dotnet add package Csla.Blazor
+
