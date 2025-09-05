@@ -3,7 +3,7 @@ from tkinter import scrolledtext, messagebox
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 from playwright.sync_api import sync_playwright
 
-# Load LLaMA 3 (replace with quantized version if needed)
+# Load LLaMA 3 
 MODEL_NAME = "meta-llama/Llama-3-7b-hf"
 
 print("Loading model... (first time will be slow)")
