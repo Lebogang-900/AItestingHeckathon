@@ -13,3 +13,13 @@ dotnet add package MudBlazor
 dotnet add package Csla
 dotnet add package Csla.Blazor
 
+Requirements
+
+Install Visual Studio 2022 Community (free) with:
+.NET 8 SDK
+ASP.NET and Web Development workload
+Install NuGet packages:
+MudBlazor
+Csla
+Csla.Blazor
+
