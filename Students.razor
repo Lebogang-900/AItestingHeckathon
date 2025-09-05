@@ -1,0 +1,35 @@
+@page "/students"
+@inject StudentService StudentService
+
+<MudText Typo="Typo.h4">Students</MudText>
+
+<MudTextField @bind-Value="newName" Label="Name" />
+<MudTextField @bind-Value="newEmail" Label="Email" />
+<MudButton Color="Color.Primary" OnClick="AddStudent">Add Student</MudButton>
+
+<MudTable Items="StudentService.GetStudents()">
+    <HeaderContent>
+        <MudTh>Id</MudTh>
+        <MudTh>Name</MudTh>
+        <MudTh>Email</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Id">@context.Id</MudTd>
+        <MudTd DataLabel="Name">@context.Name</MudTd>
+        <MudTd DataLabel="Email">@context.Email</MudTd>
+    </RowTemplate>
+</MudTable>
+
+@code {
+    private string newName = "";
+    private string newEmail = "";
+
+    void AddStudent()
+    {
+        if (!string.IsNullOrWhiteSpace(newName) && !string.IsNullOrWhiteSpace(newEmail))
+        {
+            StudentService.AddStudent(newName, newEmail);
+            newName = newEmail = "";
+        }
+    }
+}
